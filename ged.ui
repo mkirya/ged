@@ -1,24 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ged</class>
- <widget class="QMainWindow" name="ged" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="ged">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>866</width>
+    <height>579</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>ged</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>191</width>
+      <height>501</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>441</width>
+      <height>501</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>30</y>
+      <width>114</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>new</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>70</y>
+      <width>114</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>delete</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>866</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>textEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>ged</receiver>
+   <slot>checkchange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ged</receiver>
+   <slot>createnew()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>741</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>696</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>ged</receiver>
+   <slot>deletecurrent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>768</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>802</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>ged</receiver>
+   <slot>checkout(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>96</x>
+     <y>187</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>checkchange()</slot>
+  <slot>createnew()</slot>
+  <slot>deletecurrent()</slot>
+  <slot>checkout(int)</slot>
+ </slots>
 </ui>
